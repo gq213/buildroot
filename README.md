@@ -1,7 +1,9 @@
 
 1)
 make 210_defconfig
+
 make help
+
 make menuconfig
 
 2)
