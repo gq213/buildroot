@@ -1,16 +1,15 @@
 
-1)
-make 210_defconfig
+1、编译
 
-make help
+make 3288_defconfig
 
-make menuconfig
-
-2)
 make source
 
-3)
-#make toolchain
-
-4)
 make V=1
+
+
+2、烧录
+
+烧录output/images/rootfs.squashfs到Micro SD卡的第1分区
+
+sudo dd if=rootfs.squashfs of=/dev/sdb1
