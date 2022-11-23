@@ -1,6 +1,12 @@
 
 1、编译
 
+使用s5pv210板子
+
+make 210_defconfig
+
+使用rk3288板子
+
 make 3288_defconfig
 
 make source
