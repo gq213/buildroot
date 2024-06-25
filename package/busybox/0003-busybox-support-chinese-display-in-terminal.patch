@@ -1,0 +1,42 @@
+diff -Naur origin/libbb/printable_string.c new/libbb/printable_string.c
+--- origin/libbb/printable_string.c	2021-12-27 00:53:21.000000000 +0800
++++ new/libbb/printable_string.c	2024-06-23 17:41:07.778053609 +0800
+@@ -28,8 +28,6 @@
+ 		}
+ 		if (c < ' ')
+ 			break;
+-		if (c >= 0x7f)
+-			break;
+ 		s++;
+ 	}
+ 
+@@ -42,7 +40,7 @@
+ 			unsigned char c = *d;
+ 			if (c == '\0')
+ 				break;
+-			if (c < ' ' || c >= 0x7f)
++			if (c < ' ')
+ 				*d = '?';
+ 			d++;
+ 		}
+diff -Naur origin/libbb/unicode.c new/libbb/unicode.c
+--- origin/libbb/unicode.c	2021-12-27 00:53:21.000000000 +0800
++++ new/libbb/unicode.c	2024-06-23 17:41:46.886443794 +0800
+@@ -1027,7 +1027,7 @@
+ 					while ((int)--width >= 0);
+ 					break;
+ 				}
+-				*d++ = (c >= ' ' && c < 0x7f) ? c : '?';
++				*d++ = (c >= ' ') ? c : '?';
+ 				src++;
+ 			}
+ 			*d = '\0';
+@@ -1035,7 +1035,7 @@
+ 			d = dst = xstrndup(src, width);
+ 			while (*d) {
+ 				unsigned char c = *d;
+-				if (c < ' ' || c >= 0x7f)
++				if (c < ' ')
+ 					*d = '?';
+ 				d++;
+ 			}
