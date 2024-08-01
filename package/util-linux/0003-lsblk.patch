@@ -1,0 +1,70 @@
+diff -Naur old/configure new/configure
+--- old/configure	2022-02-14 17:51:44.949833000 +0800
++++ new/configure	2024-07-26 23:38:16.051372000 +0800
+@@ -1353,6 +1353,7 @@
+ enable_mkfs
+ enable_fstrim
+ enable_swapon
++enable_lsblk
+ enable_lscpu
+ enable_lslogins
+ enable_wdctl
+@@ -2171,6 +2172,7 @@
+   --disable-mkfs          do not build mkfs(8)
+   --disable-fstrim        do not build fstrim(8)
+   --disable-swapon        do not build swapon(8) and swapoff(8)
++  --enable-lsblk          build lsblk
+   --disable-lscpu         do not build lscpu
+   --disable-lslogins      do not build lslogins
+   --disable-wdctl         do not build wdctl
+@@ -31386,18 +31388,27 @@
+ 
+ 
+ 
++# Check whether --enable-lsblk was given.
++if test "${enable_lsblk+set}" = set; then :
++  enableval=$enable_lsblk;
++else
+ 
+ 
+   if test "x$ul_default_estate" != x; then
+-  enable_lsblk=$ul_default_estate
+-  build_lsblk=yes
+-  if test "x$ul_default_estate" = xno; then
+-    build_lsblk=no
++    enable_lsblk=$ul_default_estate
++  else
++    enable_lsblk=no
+   fi
+-else
+ 
+-  build_lsblk=yes
+-  enable_lsblk=check
++
++fi
++
++
++
++  if test "x$enable_lsblk" = xno; then
++   build_lsblk=no
++else
++   build_lsblk=yes
+ fi
+ 
+ 
+diff -Naur old/configure.ac new/configure.ac
+--- old/configure.ac	2022-02-14 17:50:18.152201000 +0800
++++ new/configure.ac	2024-07-26 23:38:07.365935000 +0800
+@@ -1631,7 +1631,11 @@
+ AC_CHECK_FUNCS([swapoff])
+ 
+ 
+-UL_BUILD_INIT([lsblk], [check])
++AC_ARG_ENABLE([lsblk],
++  AS_HELP_STRING([--enable-lsblk], [build lsblk]),
++  [], [UL_DEFAULT_ENABLE([lsblk], [no])]
++)
++UL_BUILD_INIT([lsblk])
+ UL_REQUIRES_LINUX([lsblk])
+ UL_REQUIRES_BUILD([lsblk], [libblkid])
+ UL_REQUIRES_BUILD([lsblk], [libmount])

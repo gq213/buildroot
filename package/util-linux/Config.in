@@ -448,4 +448,13 @@ config BR2_PACKAGE_UTIL_LINUX_ZRAMCTL
 	help
 	  Set up and control zram devices
 
+config BR2_PACKAGE_UTIL_LINUX_LSBLK
+	bool "lsblk"
+	depends on BR2_USE_MMU # fork()
+	select BR2_PACKAGE_UTIL_LINUX_LIBBLKID
+	select BR2_PACKAGE_UTIL_LINUX_LIBMOUNT
+	select BR2_PACKAGE_UTIL_LINUX_LIBSMARTCOLS
+	help
+	  lsblk
+
 endif
