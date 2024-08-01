@@ -1,0 +1,18 @@
+config BR2_PACKAGE_BRCM_HOSTAPD
+	bool "hostapd"
+	depends on BR2_USE_MMU # fork()
+	depends on BR2_TOOLCHAIN_HAS_THREADS # libnl
+	select BR2_PACKAGE_LIBNL
+	select BR2_PACKAGE_OPENSSL
+	select BR2_PACKAGE_OPENSSL_FORCE_LIBOPENSSL
+	select BR2_PACKAGE_LIBOPENSSL
+	select BR2_PACKAGE_LIBOPENSSL_ENABLE_DES
+	select BR2_PACKAGE_LIBOPENSSL_ENABLE_MD4
+	help
+	  User space daemon for wireless access points.
+
+	  It implements IEEE 802.11 access point management,
+	  IEEE 802.1X/WPA/WPA2/EAP authenticators, RADIUS client,
+	  EAP server and RADIUS authentication server.
+
+	  http://w1.fi/hostapd/

@@ -1,1 +1,3 @@
 source "package/3288/relay/Config.in"
+source "package/3288/brcm_hostapd/Config.in"
+source "package/3288/brcm_wpa_supplicant/Config.in"

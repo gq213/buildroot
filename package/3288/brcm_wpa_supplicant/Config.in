@@ -1,0 +1,14 @@
+config BR2_PACKAGE_BRCM_WPA_SUPPLICANT
+	bool "wpa_supplicant"
+	depends on BR2_USE_MMU # fork()
+	depends on BR2_TOOLCHAIN_HAS_THREADS # libnl
+	select BR2_PACKAGE_LIBNL
+	select BR2_PACKAGE_OPENSSL
+	select BR2_PACKAGE_OPENSSL_FORCE_LIBOPENSSL
+	select BR2_PACKAGE_LIBOPENSSL
+	select BR2_PACKAGE_LIBOPENSSL_ENABLE_DES
+	select BR2_PACKAGE_LIBOPENSSL_ENABLE_MD4
+	help
+	  WPA supplicant for secure wireless networks
+
+	  http://w1.fi/wpa_supplicant/
