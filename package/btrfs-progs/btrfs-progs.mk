@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-BTRFS_PROGS_VERSION = 5.15.1
+BTRFS_PROGS_VERSION = 5.16.2
 BTRFS_PROGS_SITE = $(BR2_KERNEL_MIRROR)/linux/kernel/people/kdave/btrfs-progs
 BTRFS_PROGS_SOURCE = btrfs-progs-v$(BTRFS_PROGS_VERSION).tar.xz
 BTRFS_PROGS_DEPENDENCIES = host-pkgconf lzo util-linux zlib
@@ -58,6 +58,8 @@ HOST_BTRFS_PROGS_CONF_OPTS = \
 	--disable-zstd \
 	--disable-python \
 	--disable-convert
+
+HOST_BTRFS_PROGS_INSTALL_OPTS = udevdir= install
 
 $(eval $(autotools-package))
 $(eval $(host-autotools-package))

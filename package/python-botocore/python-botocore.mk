@@ -4,11 +4,11 @@
 #
 ################################################################################
 
-PYTHON_BOTOCORE_VERSION = 1.22.2
+PYTHON_BOTOCORE_VERSION = 1.34.14
 PYTHON_BOTOCORE_SOURCE = botocore-$(PYTHON_BOTOCORE_VERSION).tar.gz
-PYTHON_BOTOCORE_SITE = https://files.pythonhosted.org/packages/0d/95/f2e74e4a91994d9ebe45746f75a8c5cafd723a88270a9772d8d66e1a8ba1
+PYTHON_BOTOCORE_SITE = https://files.pythonhosted.org/packages/35/6d/a5aaf38f980060d17905398301033e9eb45c2552bf281fa7fd4c8e23ebdd
 PYTHON_BOTOCORE_SETUP_TYPE = setuptools
 PYTHON_BOTOCORE_LICENSE = Apache-2.0
-PYTHON_BOTOCORE_LICENSE_FILES = LICENSE.txt
+PYTHON_BOTOCORE_LICENSE_FILES = LICENSE.txt tests/unit/auth/aws4_testsuite/LICENSE
 
 $(eval $(python-package))

@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-QT5CONNECTIVITY_VERSION = 5e9ca5d36d65dadb98ef90013a1dcf15fbd7ae26
+QT5CONNECTIVITY_VERSION = f0c98c39447894bba493aa91c65053d7f18d68cb
 QT5CONNECTIVITY_SITE = $(QT5_SITE)/qtconnectivity/-/archive/$(QT5CONNECTIVITY_VERSION)
 QT5CONNECTIVITY_SOURCE = qtconnectivity-$(QT5CONNECTIVITY_VERSION).tar.bz2
 QT5CONNECTIVITY_INSTALL_STAGING = YES

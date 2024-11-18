@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-QT5REMOTEOBJECTS_VERSION = 4d6d1e35fb8e0cb900b5e5e9266edea51dc4f735
+QT5REMOTEOBJECTS_VERSION = bdc316aca82769b43cb7821c10d80a1ca02b846e
 QT5REMOTEOBJECTS_SITE = $(QT5_SITE)/qtremoteobjects/-/archive/$(QT5REMOTEOBJECTS_VERSION)
 QT5REMOTEOBJECTS_SOURCE = qtremoteobjects-$(QT5REMOTEOBJECTS_VERSION).tar.bz2
 QT5REMOTEOBJECTS_DEPENDENCIES = qt5base
